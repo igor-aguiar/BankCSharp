@@ -25,7 +25,7 @@ namespace Bank
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            acc = new Account();
+            acc = new SavingsAccount();
             acc.Number = 1234;
             Client c = new Client("Igor");
             acc.Owner = c;

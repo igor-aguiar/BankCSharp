@@ -17,7 +17,7 @@ namespace Bank
             return Balance += depValue;
         }
 
-        public bool Withdraw(double value)
+        public virtual bool Withdraw(double value)
         {
             if (Balance >= value)
             {
