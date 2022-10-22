@@ -6,21 +6,18 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    class SavingsAccount : Account
+    class InvestimentAccount : Account
     {
-        public SavingsAccount()
-        {
-
-        }
-
         public override double Deposit(double depValue)
         {
-            return Balance += depValue;
+            return this.Balance += depValue;
         }
 
         public override bool Withdraw(double value)
         {
-            return base.Withdraw(value + 0.10);
+            return base.Withdraw(value);
         }
+
+
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Bank
 {
-    public class Account
+    public abstract class Account
     {
         public Account()
         {
@@ -12,10 +12,7 @@ namespace Bank
         public double Balance { get;  set; }
         public Client Owner { get; set; }
 
-        public double Deposit(double depValue)
-        {
-            return Balance += depValue;
-        }
+        public abstract double Deposit(double depValue);
 
         public virtual bool Withdraw(double value)
         {
@@ -26,7 +23,7 @@ namespace Bank
             }
             else
             {
-                return false;
+                throw new Exception("The value it's greater than the balance.");
             }
             
         }

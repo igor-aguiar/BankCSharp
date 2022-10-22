@@ -6,10 +6,20 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    class CurrentAccount : Account
+    class CurrentAccount : Account, ITaxable
     {
         public CurrentAccount()
         {
+        }
+
+        public double CalculateTax()
+        {
+            return this.Balance -= Balance * 0.05;
+        }
+
+        public override double Deposit(double depValue)
+        {
+            return Balance += depValue;
         }
 
         public override bool Withdraw(double value)

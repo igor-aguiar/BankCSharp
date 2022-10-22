@@ -54,7 +54,7 @@ namespace Bank
             // 
             // registerAccountBtn
             // 
-            this.registerAccountBtn.Location = new System.Drawing.Point(84, 137);
+            this.registerAccountBtn.Location = new System.Drawing.Point(84, 156);
             this.registerAccountBtn.Name = "registerAccountBtn";
             this.registerAccountBtn.Size = new System.Drawing.Size(221, 23);
             this.registerAccountBtn.TabIndex = 9;

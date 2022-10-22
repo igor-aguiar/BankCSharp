@@ -17,6 +17,7 @@ namespace Bank
         {
             this.mainForm = mainForm;
             InitializeComponent();
+           
         }
 
         private void registerAccountBtn_Click(object sender, EventArgs e)
@@ -27,5 +28,6 @@ namespace Bank
             mainForm.addAccount(newAcc);
             this.Close();
         }
+
     }
 }

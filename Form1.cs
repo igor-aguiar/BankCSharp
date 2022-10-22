@@ -41,7 +41,7 @@ namespace Bank
             a1.Number = 1;
             addAccount(a1);
 
-            Account a2 = new Account();
+            Account a2 = new SavingsAccount();
             a2.Owner = new Client("Almir");
             a2.Number = 2;
             addAccount(a2);
@@ -69,7 +69,15 @@ namespace Bank
         private void WithdrawBtn_Click(object sender, EventArgs e)
         {
             double withdraw = Convert.ToDouble(withdrawValue.Text);
-            string operationIsOk = acc.Withdraw(withdraw) ? "Withdraw complete!" : "Insufficient funds!";
+            string operationIsOk;
+            try
+            {
+                operationIsOk = acc.Withdraw(withdraw) ? "Withdraw complete!" : "Insufficient funds!";
+            } 
+            catch (Exception ex)
+            {
+                operationIsOk = ex.Message;
+            }
             MessageBox.Show(operationIsOk);
             balance.Text = Convert.ToString(acc.Balance);
             withdrawValue.Text = "";
@@ -97,6 +105,11 @@ namespace Bank
         {
             FormCadastroConta registerForm = new FormCadastroConta(this);
             registerForm.ShowDialog();
+        }
+
+        private void calculateTaxBtn_Click(object sender, EventArgs e)
+        {
+                   
         }
     }
 }

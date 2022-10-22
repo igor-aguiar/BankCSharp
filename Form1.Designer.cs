@@ -42,9 +42,10 @@ namespace Bank
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.accountsBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.registerAccountBtn = new System.Windows.Forms.Button();
+            this.calculateTaxBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -107,6 +108,7 @@ namespace Bank
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.calculateTaxBtn);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -120,7 +122,7 @@ namespace Bank
             this.groupBox1.Controls.Add(this.balance);
             this.groupBox1.Location = new System.Drawing.Point(67, 116);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(322, 235);
+            this.groupBox1.Size = new System.Drawing.Size(322, 246);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account";
@@ -173,15 +175,6 @@ namespace Bank
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search Account";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Account:";
-            // 
             // accountsBox
             // 
             this.accountsBox.FormattingEnabled = true;
@@ -190,6 +183,15 @@ namespace Bank
             this.accountsBox.Size = new System.Drawing.Size(221, 21);
             this.accountsBox.TabIndex = 3;
             this.accountsBox.SelectedIndexChanged += new System.EventHandler(this.accountsBox_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(27, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Account:";
             // 
             // registerAccountBtn
             // 
@@ -200,6 +202,16 @@ namespace Bank
             this.registerAccountBtn.Text = "Register New Account";
             this.registerAccountBtn.UseVisualStyleBackColor = true;
             this.registerAccountBtn.Click += new System.EventHandler(this.registerAccountBtn_Click);
+            // 
+            // calculateTaxBtn
+            // 
+            this.calculateTaxBtn.Location = new System.Drawing.Point(84, 223);
+            this.calculateTaxBtn.Name = "calculateTaxBtn";
+            this.calculateTaxBtn.Size = new System.Drawing.Size(116, 23);
+            this.calculateTaxBtn.TabIndex = 10;
+            this.calculateTaxBtn.Text = "Calculate Tax";
+            this.calculateTaxBtn.UseVisualStyleBackColor = true;
+            this.calculateTaxBtn.Click += new System.EventHandler(this.calculateTaxBtn_Click);
             // 
             // Form1
             // 
@@ -238,6 +250,7 @@ namespace Bank
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox accountsBox;
         private System.Windows.Forms.Button registerAccountBtn;
+        private System.Windows.Forms.Button calculateTaxBtn;
     }
 }
 
