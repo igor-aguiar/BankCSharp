@@ -12,10 +12,20 @@ namespace Bank
 {
     public partial class Form1 : Form
     {
-        Account acc;
+        private Account acc;
+        private Account[] accs;
+        private int numberOfAccounts = 0;
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        public void addAccount(Account account)
+        {
+            this.accs[numberOfAccounts] = account;
+            accountsBox.Items.Add(account.Owner.Name);
+            numberOfAccounts++;
         }
 
         private void owner_TextChanged(object sender, EventArgs e)
@@ -25,14 +35,21 @@ namespace Bank
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            acc = new SavingsAccount();
-            acc.Number = 1234;
-            Client c = new Client("Igor");
-            acc.Owner = c;
+            accs = new Account[10];
+            Account a1 = new SavingsAccount();
+            a1.Owner = new Client("Elayne");
+            a1.Number = 1;
+            addAccount(a1);
 
-            owner.Text = acc.Owner.Name;
-            number.Text = acc.Number.ToString();
-            balance.Text = Convert.ToString(acc.Balance);
+            Account a2 = new Account();
+            a2.Owner = new Client("Almir");
+            a2.Number = 2;
+            addAccount(a2);
+
+            Account a3 = new CurrentAccount();
+            a3.Owner = new Client("Georgia");
+            a3.Number = 3;
+            addAccount(a3);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -61,6 +78,25 @@ namespace Bank
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void accountsBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            acc = this.accs[accountsBox.SelectedIndex];
+            owner.Text = acc.Owner.Name;
+            balance.Text = acc.Balance.ToString();
+            number.Text = acc.Number.ToString();
+        }
+
+        private void registerAccountBtn_Click(object sender, EventArgs e)
+        {
+            FormCadastroConta registerForm = new FormCadastroConta(this);
+            registerForm.ShowDialog();
         }
     }
 }
